@@ -1,0 +1,899 @@
+{
+	"info": {
+		"_postman_id": "2b35b5c6-7e53-4715-9671-603e3cd10ada",
+		"name": "PortalMedia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31967560"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \r\n    \"email\": \"hema@admin.com\",\r\n    \r\n    \"password\": \"123456789\"\r\n     \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"firstname\": \"ibrahim\",\r\n    \"lastname\": \"alsayed\",\r\n    \"username\": \"fox\",\r\n    \"email\": \"hema@admin.com\",\r\n    \"phone\": \"01092813922\",\r\n    \"password\": \"12345678\",\r\n    \"role\": \"coordinator\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllAccounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/accounts",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteAccount",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/accounts/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"accounts",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Department",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"name\": \"قسم علاقات اعلام\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/departments",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/departments",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/departments/12",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"departments",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/departments/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"departments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "GetAllProjects",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/projects",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddNewProject",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"مشروع اليوبيل الفضى\",\r\n    \"description\": \"مشروع اليوبيل الفضي هو مبادرة تهدف إلى الاحتفال بالذكرى الخمسين لتأسيس منظمة معينة أو حدث مهم في مجتمع معين. يمكن أن يشمل ذلك فعاليات ثقافية، وأنشطة تطوعية، ومشاريع تنموية، تهدف إلى تعزيز الوعي بالقضايا الاجتماعية والبيئية وتعزيز الروح الإنسانية والتضامن المجتمعي\",\r\n    \"video_demo\": \"https://example.com/demo.mp4\",\r\n    \"status\": \"pending\",\r\n    \"coordinator_id\": 1,\r\n    \"StarRating\": 4,\r\n    \"department_id\": 1,\r\n    \"Year\": 2022\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/projects",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProjectsByDepartment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/departments/2/projects",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"departments",
+								"2",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddProjectWithVideo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"uuid": "47b0db4f-1e9d-4532-8e6b-d672750bd135"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "مشروع اليوبيل الفضى",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "مشروع اليوبيل الفضي هو مبادرة تهدف إلى الاحتفال بالذكرى الخمسين لتأسيس منظمة معينة أو حدث مهم في مجتمع معين. يمكن أن يشمل ذلك فعاليات ثقافية، وأنشطة تطوعية، ومشاريع تنموية، تهدف إلى تعزيز الوعي بالقضايا الاجتماعية والبيئية وتعزيز الروح الإنسانية والتضامن المجتمعي",
+									"type": "text"
+								},
+								{
+									"key": "coordinator_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "video_demo",
+									"type": "file",
+									"src": "/C:/Users/ibrah/OneDrive/Desktop/WhatsApp Video 2024-05-05 at 18.04.53_2787a94a.mp4"
+								},
+								{
+									"key": "status",
+									"value": "pending",
+									"type": "text"
+								},
+								{
+									"key": "StarRating",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "department_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "Year",
+									"value": "2021",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/projects/store2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"projects",
+								"store2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProjectsByDepartmentIdWithVideo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/departments/4/getProjectsByDepartmentIdWithVideo",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"departments",
+								"4",
+								"getProjectsByDepartmentIdWithVideo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/projects/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"projects",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Activities",
+			"item": [
+				{
+					"name": "GetAllActivities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/activities",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"activities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/activities/29",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"activities",
+								"29"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddNewActivity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "new",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "neewwww activity",
+									"type": "text"
+								},
+								{
+									"key": "file_demo",
+									"type": "file",
+									"src": "/D:/project photos/Project1_Photos/405873.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/activities",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"activities"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Magazines",
+			"item": [
+				{
+					"name": "GetAllMagazines",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/magazines",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"magazines"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMagazine",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/magazines/5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"magazines",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddNewMagazine",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "new ",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "new description",
+									"type": "text"
+								},
+								{
+									"key": "auther",
+									"value": "عصام صاصا",
+									"type": "text"
+								},
+								{
+									"key": "file_demo",
+									"type": "file",
+									"src": "/C:/Users/ibrah/OneDrive/Desktop/Questions.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/magazines",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"magazines"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project-review",
+			"item": [
+				{
+					"name": "AddProjectReview",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project_id\": 1,\r\n    \"account_id\": 1,\r\n    \"rating\": 4,\r\n    \"comment\": \"This is a great project review.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/project-reviews",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"project-reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetReviewByProjectID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/project-reviews",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"project-reviews"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ScreenShots",
+			"item": [
+				{
+					"name": "AddScreenShot",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project_id\": 1,\r\n    \"screenshot_path\": \"path/to/screenshot1.png\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/screenshots",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"screenshots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UploadScreenShoot",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "project_id",
+									"value": "59",
+									"type": "text"
+								},
+								{
+									"key": "screenshot",
+									"type": "file",
+									"src": "/D:/project photos/Project1_Photos/346858224_1296069137688078_2244261913470141745_n.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/screenshots/upload",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"screenshots",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUploadedScreenShootsByProjectId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/screenshots/project/59",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"screenshots",
+								"project",
+								"59"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/screenshots/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"screenshots",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Projfiles",
+			"item": [
+				{
+					"name": "AddProjfile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project_id\": 1,\r\n    \"screenshot_path\": \"path/to/screenshot1.png\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/projfiles",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projfiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UploadProjfiles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "project_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "projfile",
+									"type": "file",
+									"src": "/C:/Users/ibrah/OneDrive/Desktop/Questions.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/projfiles/upload",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projfiles",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUploadedProjfilesByProjectId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/projfiles/project/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projfiles",
+								"project",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/projfiles/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projfiles",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ChatBot",
+			"item": [
+				{
+					"name": "Chat",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://127.0.0.1:8000/api",
+			"type": "string"
+		}
+	]
+}
